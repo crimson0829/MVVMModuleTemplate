@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="MVVM Activity"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a new mvvm activity">
+
+    <category value="Activity" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="activityName"
+        name="Activity Name"
+        constraints="class|unique|nonempty"
+        type="string"
+        suggest="${layoutToActivity(layout_name)}"
+        default="MVVMActivity"
+        help="The name of the activity class to create" />
+
+      <parameter
+        id="isScreenOrientationPortrait"
+        name="Is Activity Orientation Portrait"
+        type="boolean"
+        default="true"
+        help="If true, the activity orientation will be portrait" />
+
+    <parameter
+        id="bindingName"
+        name="Binding Name"
+        type="string"
+        suggest="${underscoreToCamelCase(classToResource(layout_name))}"
+        default="ActivityMVVM"
+        help="The name of the viewBinding class to create" />
+
+    <parameter
+        id="viewModelName"
+        name="ViewModel Name"
+        type="string"
+        suggest="${underscoreToCamelCase(classToResource(activityName))}ViewModel"
+        default="MVVMViewModel"
+        help="The name of the viewModel class to create" />
+
+    <parameter
+        id="generateViewModel"
+        name="Generate ViewModel File"
+        type="boolean"
+        default="true"
+        help="If true, a viewModel file will be generated" />
+ 
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="layout_name"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityName)}"
+        default="activity_mvvm"
+        visibility="generateLayout"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="needTitleBar"
+        name="Need TitleBar"
+        type="boolean"
+        default="true"
+        visibility="generateLayout"
+        help="If true, a titleBar layout  will be included" />
+
+    <parameter
+        id="activityTitle"
+        name="Activity Title Name"
+        type="string"
+        default=""
+        visibility="needTitleBar"
+        help="Set the activity title" />
+
+    <parameter
+        id="needRecyclerView"
+        name="Need RecyclerView"
+        type="boolean"
+        default="false"
+        visibility="generateLayout"
+        help="If true, a recyclerView layout  will be included" />
+
+    <parameter
+        id="needAdapter"
+        name="Need Adapter"
+        type="boolean"
+        default="false"
+        visibility="needRecyclerView"
+        help="If true, a recyclerView adapter class  will be included" />  
+
+
+    <parameter
+        id="adapterName"
+        name="Adapter Name"
+        type="string"
+        constraints="class"
+        default="MVVMAdapter"
+        suggest="${underscoreToCamelCase(classToResource(activityName))}Adapter"
+        visibility="needAdapter"
+        help="The name of the RecyclerView Adapter class to create" /> 
+
+    <parameter
+        id="adapter_layout_name"
+        name="Adapter Layout Name"
+        type="string"
+        constraints="layout"
+        suggest="adapter_item_${activityToLayout(activityName)}"
+        default="adapter_item_mvvm"
+        visibility="needAdapter"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="adapterEntityName"
+        name="Adapter Entity Name"
+        type="string"
+        suggest="${underscoreToCamelCase(classToResource(activityName))}Entity"
+        default="MVVMEntity"
+        visibility="needAdapter"
+        help="The name of the adapter Entity class to create" />
+
+      <parameter
+        id="adapterBindingName"
+        name="Adapter Binding Name"
+        type="string"
+        suggest="${underscoreToCamelCase(classToResource(adapter_layout_name))}"
+        default="AdapterItemMVVM"
+        visibility="needAdapter"
+        help="The name of the adapter viewBinding class to create" />    
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.mycompany.myapp" />
+
+
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>template_mvvm_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
