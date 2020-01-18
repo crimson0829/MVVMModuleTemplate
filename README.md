@@ -16,11 +16,11 @@ A template for Android Studio to create MVVM_Module Pages
 
 ## 使用
 * 创建Activity模版：
-<br>
+
 ![1579248495597](https://github.com/crimson0829/MVVMModuleTemplate/blob/master/ScreenShot/1579248495597.jpg)
 
 * 创建Fragment模版：
-<br>
+
 ![1579248624374](https://github.com/crimson0829/MVVMModuleTemplate/blob/master/ScreenShot/1579248624374.jpg)
 
 ## 代码模版
@@ -36,7 +36,7 @@ settings_live_template 中提供了一些常用的针对该Module的代码模版
 * 导入settings文件：
  File -> Import Settings -> 选择文件 -> 点击ok -> 重启AS 
  <br>
- 你也可以创建自己的代码模版，怎么效率怎么来 
+ 
 
 
 
