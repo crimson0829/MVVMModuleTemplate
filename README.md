@@ -1,7 +1,7 @@
 # MVVMModuleTemplate
 A template for Android Studio to create MVVM_Module Pages
 
-此模版能更快速的生成Activity和Fragment代码，加速开发效率，从此再也不用写重复的代码了，懒人模式必备。
+此模版能更快速的生成Activity和Fragment代码，加速开发效率，懒人必备。
 <br>
 
 ![1579248832306](https://github.com/crimson0829/MVVMModuleTemplate/blob/master/ScreenShot/1579248832306.jpg)
