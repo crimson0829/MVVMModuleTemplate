@@ -9,7 +9,7 @@ A template for Android Studio to create MVVM_Module Pages
 
 ## 安装
 将整个文件夹放入Android Studio 目录下：
-<br>
+
 * Windows : AS安装目录/plugins/android/lib/templates/activities
 
 * Mac : /Applications/Android Studio.app/Contents/plugins/android/lib/templates/activities
